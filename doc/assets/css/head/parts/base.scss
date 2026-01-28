@@ -87,23 +87,6 @@ body {
 }
 
 
-/* ========== ICONS ========== */
-.icons {
-    display: flex;
-    align-items: center;
-    gap: clamp(15px, 2.5vw, 30px);
-}
-
-.icon-btn svg {
-    width: clamp(22px, 2vw, 26px);
-    height: clamp(22px, 2vw, 26px);
-    stroke: #F8F8FF;
-    transition: stroke 0.25s ease;
-}
-
-.icon-btn:hover svg {
-    stroke: #ff5f00;
-}
 
 /* ========== INFO ========== */
 .info {
@@ -145,25 +128,6 @@ body {
     align-items: flex-start;
 }
 
-/* ========== SIDEBAR ========== */
-.sidebar {
-    width: clamp(250px, 25vw, 300px);
-    flex-shrink: 0;
-    order: 2;
-}
-
-.sidebar-section { 
-    border-radius: 12px;
-    padding: clamp(16px, 2vw, 20px);
-    margin-bottom: clamp(16px, 2vw, 20px);
-}
-
-
-
-/* Optional: Add spacing between the number and the text */
-h1:before, h2:before, h3:before, h4:before {
-  font-weight: bold;
-}
 
 /* ========== MAIN CONTENT ========== */
 .content {

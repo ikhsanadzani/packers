@@ -1,0 +1,17 @@
+/* ========== ICONS ========== */
+.icons {
+    display: flex;
+    align-items: center;
+    gap: clamp(15px, 2.5vw, 30px);
+}
+
+.icon-btn svg {
+    width: clamp(22px, 2vw, 26px);
+    height: clamp(22px, 2vw, 26px);
+    stroke: #F8F8FF;
+    transition: stroke 0.25s ease;
+}
+
+.icon-btn:hover svg {
+    stroke: #ff5f00;
+}

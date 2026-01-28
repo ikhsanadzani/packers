@@ -1,0 +1,19 @@
+/* ========== SIDEBAR ========== */
+.sidebar {
+    width: clamp(250px, 25vw, 300px);
+    flex-shrink: 0;
+    order: 2;
+}
+
+.sidebar-section { 
+    border-radius: 12px;
+    padding: clamp(16px, 2vw, 20px);
+    margin-bottom: clamp(16px, 2vw, 20px);
+}
+
+
+
+/* Optional: Add spacing between the number and the text */
+h1:before, h2:before, h3:before, h4:before {
+  font-weight: bold;
+}

@@ -5,19 +5,18 @@
 {{- define "main" -}}
 
 	<div class="overlay">
-		<div class="content mans list">
+		<article class="content manslist">
 			<div class="header">
-				<h1>{{ .Parent.Title }} Manual</h1>
+				<h1 class="heading">{{ .Parent.Title }} Manual</h1>
 			</div>
 			<div class="pages">
-				<h1>Name</h1>
-				<p class="">{{ .Title }}</p>
+				<h1>Name</h1><p>{{ .Title }}</p>
 				{{ .Content }}
 			</div>
-		</div>
-		<div class="sidebar">
+		</article>
+		<asside class="sidebar">
 			{{- partial "view/sides/listmans.html" . -}}
-		</div>
+		</asside>
 	</div>
 
 {{- end -}}

@@ -5,20 +5,18 @@
 {{- define "main" -}}
 
 	<div class="overlay">
-
-		<div class="content docs list">
+		<article class="content docspage">
 			<div class="header">
-				<h1>{{ .Parent.Parent.Title }} Documentation</h1>
+				<h1 class="heading">{{ .Parent.Parent.Title }} Documentation</h1>
 			</div>
 			<div class="pages">
-				<h1>Name</h1>
-				<p class="">{{ .Title }}</p>
+				<h1>Name</h1><p class="">{{ .Title }}</p>
 				{{ .Content }}
 			</div>
-		</div>
-		<div class="sidebar">
+		</article>
+		<asside class="sidebar">
 			{{- partial "view/sides/listdocs.html" . -}}
-		</div>
+		</asside>
 	</div>
 
 {{- end -}}

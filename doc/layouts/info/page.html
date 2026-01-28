@@ -6,14 +6,16 @@
 {{- define "main" -}}
 
 	<div class="overlay">
-		<article class="content info">
-			<h1>About {{ .Parent.Title }}</h1>
+		<article class="content infopage">
+			<div class="header">
+				<h1 class="heading">About {{ .Parent.Parent.Title }}</h1>
+			</div>
 			<div class="pages"> {{ .Content }} </div>
 		</article>
 		<asside class="sidebar">
-			{{ partial "view/sides/packdata.html" . }}
-			{{ partial "view/sides/teamdata.html" . }}
-			{{ partial "view/sides/contdata.html" . }}
+			{{- partial "view/sides/packdata.html" . -}}
+			{{- partial "view/sides/teamdata.html" . -}}
+			{{- partial "view/sides/contdata.html" . -}}
 		</asside>
 	</div>
 
