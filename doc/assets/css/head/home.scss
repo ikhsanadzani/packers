@@ -16,7 +16,7 @@
     counter-increment: h1;
     content: counter(h1) " | ";
     color: var(--orange-color);
-}
+} 
 
 .pages h2:before {
     font-weight: 500;
