@@ -2,19 +2,15 @@
 <html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
 <head>
 
-    {{- block "asset_head" . -}}{{- end -}}
+    {{- block "asset_hook" . -}}{{- end -}}
     {{- partial "view/meta/base.html" . -}}
 
-    <!-- asset rendering -->
-    {{- $current_pageuri := . -}}
-    {{- $style_base_head := .Scratch.Get "style_asset" | default ( dict "src" "css/head/home.scss" "dest" "css/head/home.css" ) -}}
-    {{- $sytle_over_head := (dict "src" "css/head/over.scss" "dest" "css/head/over.css") -}}
-
-    {{- range (slice $style_base_head $sytle_over_head) -}}
-        {{- $style := resources.Get .src | resources.ExecuteAsTemplate .dest $current_pageuri | toCSS | minify -}}
-        <link type="text/css" rel="stylesheet" href="{{ $style.RelPermalink }}" />
-    {{- end -}}
+    <!-- head style -->
+    {{- $styles_head := .Scratch.Get "style_head" | default ( dict "src" "css/head/home.scss" "dest" "css/head/home.css" ) -}}
+    {{- $styles_head := resources.Get $styles_head.src | resources.ExecuteAsTemplate $styles_head.dest . | toCSS | minify -}}
+    <link type="text/css" rel="stylesheet" href="{{ $styles_head.RelPermalink }}" />
     
+
 
     {{- partial "view/head/aset.html" . -}}
     {{- partial "view/meta/main.html" . -}}
@@ -33,6 +29,12 @@
     <footer>
         {{- partial "view/boto/main.html" . -}}
     </footer>
+
+    <!-- pack style -->
+    {{- $styles_pack := .Scratch.Get "style_pack" | default ( dict "src" "css/pack/home.scss" "dest" "assets/css/home.css" ) -}}
+    {{- $styles_pack := resources.Get $styles_pack.src | resources.ExecuteAsTemplate $styles_pack.dest . | toCSS | minify -}}
+    <link type="text/css" rel="stylesheet" href="{{ $styles_pack.RelPermalink }}" />
+
     {{- partial "view/pack/aset.html" . -}}
 </body>
 </html>

@@ -1,5 +1,5 @@
-{{- define "asset_head" -}}
-    {{- $.Scratch.Set "style_asset" (dict "src" "css/head/home.scss" "dest" "css/head/home.scss") -}}
+{{- define "asset_hook" -}}
+    {{- $.Scratch.Set "style_head" (dict "src" "css/head/home.scss" "dest" "css/head/home.scss") -}}
 {{- end -}}
 
 
